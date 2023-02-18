@@ -1,0 +1,225 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+@font-face {
+	font-family: "igorbold_italic";
+	src: url(IGOR-BoldItalic.ttf);
+}
+
+:root {
+	--igor: #c18d9c;
+	--flower: #c12200;
+	--wolf: #75724d;
+}
+
+html {
+	font-size: 62.5%;
+	box-sizing: border-box;
+}
+
+.face {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	transition: all 0.3s ease-in-out;
+	filter: drop-shadow(0px 10px 20px rgba(29, 21, 34, 0.701));
+}
+
+.faceimage:hover img {
+	filter: drop-shadow(0px 10px 20px rgba(144, 151, 214, 0.815));
+}
+
+.face:hover::after {
+	content: "";
+	display: block;
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.chat {
+	position: absolute;
+	z-index: -1;
+	height: 150%;
+	left: 650px;
+	animation-name: shrink-image;
+	animation-duration: 15s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes shrink-image {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(0.3) translateX(-200%) translateY(-50%) rotate(20deg);
+	}
+}
+
+.golf {
+	position: absolute;
+	bottom: 0;
+	height: 3rem;
+	margin-bottom: 2rem;
+}
+
+body {
+	overflow: hidden;
+	font-family: "igorbold_italic";
+	font-weight: normal;
+	font-style: normal;
+	line-height: 1.5;
+	height: 100vh;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #91aab0;
+}
+
+.show-modal {
+	z-index: 1;
+	font-size: 2rem;
+	font-weight: 600;
+	padding: 1.75rem 3.5rem;
+	margin: 5rem 2rem;
+	border: none;
+	background-color: #fbb37083;
+	color: #2c2c2c;
+	border-radius: 10rem;
+	cursor: pointer;
+	transition: 0.9s;
+}
+
+.show-modal:hover {
+	transition: 0.5s;
+	background-color: #2c2c2c;
+	color: #fbb37083;
+}
+
+.close-modal,
+.close-modal1,
+.close-modal3 {
+	position: absolute;
+	top: 1.2rem;
+	right: 1rem;
+	font-size: 5rem;
+	color: #333;
+	cursor: pointer;
+	border: none;
+	background: none;
+}
+
+h1 {
+	font-family: "igorbold_italic";
+	font-weight: normal;
+	font-style: normal;
+	margin-bottom: 2rem;
+}
+
+p {
+	font-family: "igorbold_italic";
+	font-size: 1.8rem;
+}
+
+/* -------------------------- */
+/* CLASSES TO MAKE MODAL WORK */
+.hidden {
+	display: none;
+}
+
+.show-modal {
+	font-family: "igorbold_italic";
+}
+
+.modal1 {
+	position: relative;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 6rem;
+	border-radius: 5px;
+	z-index: 21;
+}
+
+.tracks {
+	position: absolute;
+	top: 16%;
+	left: 60%;
+	color: rgb(22, 14, 14);
+}
+
+.hiddenigor {
+	width: 500px;
+	height: 500px;
+	box-shadow: 0 3rem 5rem rgb(0, 0, 0);
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--igor);
+	opacity: 0.9;
+	z-index: 20;
+}
+
+.overlay1,
+.overlay3 {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(192, 79, 34);
+	opacity: 0.9;
+	z-index: 20;
+}
+
+.overlay3 {
+	background-color: var(--wolf);
+}
+
+.modal2,
+.modal3 {
+	position: relative;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 6rem;
+	border-radius: 5px;
+	z-index: 21;
+}
+
+.hidden2,
+.hidden3 {
+	width: 500px;
+	height: 500px;
+	box-shadow: 0 3rem 5rem rgb(0, 0, 0);
+}
+
+.modal-animation {
+	animation-name: open-modal;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes open-modal {
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1) translateX(-50%);
+	}
+}
